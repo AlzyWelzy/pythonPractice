@@ -21,6 +21,7 @@ files = os.listdir()
 
 
 files.remove("practice-5.py")
+files.remove("extensions_by_type.json")
 
 print(files)
 
