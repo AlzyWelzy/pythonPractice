@@ -1,5 +1,6 @@
 import os
 import json
+import shutil
 
 
 def createDir(par):
@@ -21,7 +22,8 @@ donnotRemove = []
 
 createDir("images")
 createDir("docs")
-createDir("media")
+createDir("audio")
+createDir("video")
 createDir("others")
 
 
@@ -58,14 +60,15 @@ imgExts = [doc.lower() for doc in data.get("Raster image")]
 vidExts = [doc.lower() for doc in data.get("Video")]
 audExts = [doc.lower() for doc in data.get("Audio")]
 # otherExts = [doc.lower() for doc in data.get(i for i in othExt)]
-otherExts = sum([[doc.lower() for doc in data[i]] for i in othExt], [])
+# otherExts = sum([[doc.lower() for doc in data[i]] for i in othExt], [])
 
-# otherExts = []
-# for i in othExt:
-#     lowercase_docs = []
-#     for doc in data[i]:
-#         lowercase_docs.append(doc.lower())
-#     otherExts.append(lowercase_docs)
+otherExts = []
+for i in othExt:
+    lowercase_docs = []
+    for doc in data[i]:
+        lowercase_docs.append(doc.lower())
+    otherExts.append(lowercase_docs)
+otherExts = sum(otherExts, [])
 
 
 ############
@@ -113,7 +116,34 @@ others = []
 
 for file in files:
     ext = os.path.splitext(file)[1].lower()
-    if (ext not in vidExts) and (ext not in audExts) and (ext not in docExts) and (ext not in imgExts):
+    if (ext not in vidExts) and (ext not in audExts) and (ext not in docExts) and (ext not in imgExts) and os.path.isfile(file):
         others.append(file)
 
 print(others)
+
+# others = [file for file in files if os.path.splitext(file)[1].lower() not in vidExts and os.path.splitext(file)[1].lower() not in audExts and os.path.splitext(file)[1].lower() not in docExts and os.path.splitext(file)[1].lower() not in imgExts and os.path.isfile(file)]
+
+# print(otherExts)
+
+# print(len(otherExts))
+
+
+for i in images:
+    newPath = "images/"
+    shutil.move(i, newPath)
+
+for i in docs:
+    newPath = "docs/"
+    shutil.move(i, newPath)
+
+for i in vids:
+    newPath = "video/"
+    shutil.move(i, newPath)
+
+for i in auds:
+    newPath = "audio/"
+    shutil.move(i, newPath)
+
+for i in others:
+    newPath = "others/"
+    shutil.move(i, newPath)
