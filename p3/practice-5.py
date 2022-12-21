@@ -3,6 +3,12 @@ import json
 import shutil
 
 
+def move(fileName, pathTo):
+    for i in fileName:
+        newPath = pathTo+"/"
+        shutil.move(i, newPath)
+
+
 def createDir(par):
     if not os.path.exists(par):
         os.makedirs(par)
@@ -126,12 +132,6 @@ print(others)
 # print(otherExts)
 
 # print(len(otherExts))
-
-
-def move(fileName, pathTo):
-    for i in fileName:
-        newPath = pathTo+"/"
-        shutil.move(i, newPath)
 
 
 # for i in images:
