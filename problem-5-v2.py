@@ -128,34 +128,22 @@ print(others)
 # print(len(otherExts))
 
 
-def move(fileName, pathTo):
-    for i in fileName:
-        newPath = pathTo+"/"
-        shutil.move(i, newPath)
+for i in images:
+    newPath = "images/"
+    shutil.move(i, newPath)
 
+for i in docs:
+    newPath = "docs/"
+    shutil.move(i, newPath)
 
-# for i in images:
-#     newPath = "images/"
-#     shutil.move(i, newPath)
+for i in vids:
+    newPath = "video/"
+    shutil.move(i, newPath)
 
-# for i in docs:
-#     newPath = "docs/"
-#     shutil.move(i, newPath)
+for i in auds:
+    newPath = "audio/"
+    shutil.move(i, newPath)
 
-# for i in vids:
-#     newPath = "video/"
-#     shutil.move(i, newPath)
-
-# for i in auds:
-#     newPath = "audio/"
-#     shutil.move(i, newPath)
-
-# for i in others:
-#     newPath = "others/"
-#     shutil.move(i, newPath)
-
-move(images, "images")
-move(docs, "docs")
-move(auds, "audio")
-move(vids, "video")
-move(others, "others")
+for i in others:
+    newPath = "others/"
+    shutil.move(i, newPath)
