@@ -37,6 +37,7 @@ class FileOrganizer:
         files = os.listdir()
         files.remove("practice-5.py")
         files.remove("practice-5-v2.py")
+        files.remove("extensions_by_type.json")
         self.create_directory("images")
         self.create_directory("docs")
         self.create_directory("audios")
