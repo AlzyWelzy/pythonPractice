@@ -3,7 +3,7 @@ def matrix(m, n):
     for i in range(m):
         row = []
         for j in range(n):
-            inp = int(input(f"Enter O[{i}][{j}]"))
+            inp = int(input(f"Enter O[{i}][{j}]: "))
             row.append(inp)
         o.append(row)
     return o
@@ -12,11 +12,11 @@ def matrix(m, n):
 m = int(input("Enter the value for m: "))
 n = int(input("Enter the value for n: "))
 
-print("Enter martiix A")
+print("Enter martix A")
 X = matrix(m, n)
 print(X)
 
-print("Enter martiix B")
+print("Enter martix B")
 Y = matrix(m, n)
 print(Y)
 
