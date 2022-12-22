@@ -38,3 +38,12 @@ def isPalindrome(val):
 
 
 print(isPalindrome(value))
+
+
+def is_palindrome(s):
+    return all(s[i] == s[~i] for i in range(len(s) // 2))
+
+
+# Test the function
+print(is_palindrome("racecar"))  # True
+print(is_palindrome("hello"))  # False
