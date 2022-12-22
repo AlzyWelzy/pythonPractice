@@ -2,7 +2,6 @@ import os
 import json
 import shutil
 
-
 class FileOrganizer:
     def __init__(self):
         with open("extensions_by_type.json") as f:
@@ -64,7 +63,6 @@ class FileOrganizer:
         self.move_files(vids, "videos")
         self.move_files(auds, "audios")
         self.move_files(others, "others")
-
 
 organizer = FileOrganizer()
 organizer.organize()
