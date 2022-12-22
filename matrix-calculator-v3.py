@@ -13,9 +13,16 @@ m = int(input("Enter the value for m: "))
 n = int(input("Enter the value for n: "))
 
 print("Enter martiix A")
-A = matrix(m, n)
-print(A)
+X = matrix(m, n)
+print(X)
 
 print("Enter martiix B")
-B = matrix(m, n)
-print(B)
+Y = matrix(m, n)
+print(Y)
+
+result = [[X[i][j] + Y[i][j] for j in range(len(X[0]))] for i in range(len(X))]
+
+for r in result:
+    print(r)
+
+print(result)
