@@ -1,8 +1,5 @@
-items = int(input())
-days = int(input())
+i = 3
 
-while days > 0:
-    items *= 2
-    days -= 1
-
-print(items)
+while i >= 0:
+    print(i)
+    i = i-1
