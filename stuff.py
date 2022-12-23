@@ -1,12 +1,7 @@
-def transform(a=2):
-    if a == 1:
-        return a + - 2
-    return a
+x = 4
+y = 2
 
-
-total = 1
-
-for x in [3, 5, 1]:
-    total = total + transform(x)
-
-print(total)
+if not 1+1 == y or x == 4 and 7 == 8:
+    print("Yes")
+elif x > y:
+    print("No")
