@@ -1,7 +1,8 @@
-x = 4
-y = 2
+items = int(input())
+days = int(input())
 
-if not 1+1 == y or x == 4 and 7 == 8:
-    print("Yes")
-elif x > y:
-    print("No")
+while days > 0:
+    items *= 2
+    days -= 1
+
+print(items)
