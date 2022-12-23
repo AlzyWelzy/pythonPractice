@@ -1,7 +1,6 @@
-i = 5
+list = [2, 3, 4, 5, 6, 7]
 
-while True:
-    print(i)
-    i = i-1
-    if i <= 2:
+for x in list:
+    if x % 2 == 1 and x > 4:
+        print(x)
         break
